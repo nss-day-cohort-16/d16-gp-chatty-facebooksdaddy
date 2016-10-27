@@ -1,0 +1,19 @@
+/*<--------------- IDs ---------------->*/
+#container {
+  border: 1px solid black; }
+
+/*<--------------- Classes ---------------->*/
+.messageContainer {
+  margin: 0;
+  padding: 0;
+  width: 100%; }
+
+.messageText {
+  display: inline-block;
+  width: 79%; }
+
+.deleteButton {
+  display: inline-block;
+  width: 19%; }
+
+/*# sourceMappingURL=styles.css.map */
