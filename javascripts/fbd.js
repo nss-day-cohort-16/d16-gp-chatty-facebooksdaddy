@@ -1,6 +1,6 @@
 "use strict";
 
-var Chatty = (function(Chatty) {
+var Chatty = ( function(Chatty) {
 	var inputMessages = [];
 	var counter = 6;
 	
@@ -20,6 +20,7 @@ var Chatty = (function(Chatty) {
 			var targetElement = document.getElementById(string);
 			targetElement.addEventListener("click", function(){
 			Chatty.deleteMessage(id);
+			});	
 		};
 		console.log(inputMessages);
 		return Chatty;
