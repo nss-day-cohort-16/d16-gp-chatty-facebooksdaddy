@@ -25,7 +25,7 @@ var Chatty = ( function(Chatty) {
 		Chatty.clearMessages = function () {
 			document.getElementByClassName("hidden")[0].setattribute("disabled",true);
 			inputMessages = [];
-			document.getElementByClassName("messageText").innerHTML = "";
+			document.getElementById("container").innerHTML = "";
 		};
 		console.log(inputMessages);
 		return Chatty;
