@@ -3,7 +3,7 @@
 var Chatty = ( function(Chatty) {
 	var inputMessages = [];
 	var counter = 6;
-	
+
 		Chatty.addNewMessage = function( input) {
 			var Messages = {
 				message: input,
@@ -13,14 +13,14 @@ var Chatty = ( function(Chatty) {
 			Chatty.loadNewMessage(input, counter);
 			Chatty.listenSingleMessage(counter);
 			counter++;
-
+			document.getElementById("clear-button").disabled = false;
 		};
 		Chatty.listenSingleMessage = function (id) {
 			var string = "deleteButton-" + id;
 			var targetElement = document.getElementById(string);
 			targetElement.addEventListener("click", function(){
 			Chatty.deleteMessage(id);
-			});	
+			});
 		};
 		Chatty.clearMessages = function () {
 			document.getElementById("clear-button").disabled = true;
