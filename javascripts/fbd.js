@@ -18,8 +18,8 @@ var Chatty = (function(Chatty) {
 		Chatty.listenSingleMessage = function (id) {
 			var string = "deleteButton-" + id;
 			var targetElement = document.getElementById(string);
-			targetElement.addEventListener("click", Chatty.deleteMessage);
-			// Chatty.deleteMessage(id);
+			targetElement.addEventListener("click", function(){
+			Chatty.deleteMessage(id);
 		};
 		console.log(inputMessages);
 		return Chatty;
