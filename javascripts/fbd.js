@@ -23,7 +23,7 @@ var Chatty = ( function(Chatty) {
 			});	
 		};
 		Chatty.clearMessages = function () {
-			document.getElementByClassName("hidden")[0].setattribute("disabled",true);
+			document.getElementById("clear-button").disabled = true;
 			inputMessages = [];
 			document.getElementById("container").innerHTML = "";
 		};
