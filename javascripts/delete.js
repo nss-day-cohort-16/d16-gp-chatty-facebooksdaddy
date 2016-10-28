@@ -13,7 +13,7 @@ var Chatty = (function(Chatty) {
     targetElement.innerHTML = "";
     // Call a function that deletes message from private array if not JSON messages 1-5
     if (id > 5) {
-        deleteFromArray(id);
+        Chatty.deleteFromArray(id);
     }
 
     };
