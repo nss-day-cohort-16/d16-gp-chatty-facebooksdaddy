@@ -22,6 +22,11 @@ var Chatty = ( function(Chatty) {
 			Chatty.deleteMessage(id);
 			});	
 		};
+		Chatty.clearMessages = function () {
+			document.getElementById("clear-button").disabled = true;
+			inputMessages = [];
+			document.getElementById("container").innerHTML = "";
+		};
 		console.log(inputMessages);
 		return Chatty;
 
