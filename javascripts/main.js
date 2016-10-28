@@ -1,12 +1,5 @@
 "use strict";
+console.log("main js page loads", Chatty);
 
-document.getElementsByClassName("hidden")[0].setAttribute("disabled", true);
-
-var Chatty = (function(Chatty) {
-	return {
-
-	};
-
-})(Chatty || {});
-
-console.log("main js", Chatty);
+//Get data and load page with original messages
+Chatty.getData();
