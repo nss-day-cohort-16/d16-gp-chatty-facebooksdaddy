@@ -1,10 +1,20 @@
 "use strict";
+console.log("delete js loads");
 
 var Chatty = (function(Chatty) {
-	return {
 
+  Chatty.deleteMessage = function (id) {
+    console.log("deleteMessage function ran");
+
+    // Take id (number) and create string equal to message-6, message-7, etc
+    var idName = "message-" + id;
+    // Target and remove that message from DOM
+    var targetElement = document.getElementById(idName);
+    targetElement.innerHTML = "";
+    // Call a function that deletes message from private array or ignore if from JSON
+    deleteFromArray(id);
 	};
 
-})(Chatty || {});
+  return Chatty;
 
-console.log("delete js", Chatty);
+})(Chatty || {});
