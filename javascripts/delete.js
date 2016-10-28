@@ -11,9 +11,12 @@ var Chatty = (function(Chatty) {
     // Target and remove that message from DOM
     var targetElement = document.getElementById(idName);
     targetElement.innerHTML = "";
-    // Call a function that deletes message from private array or ignore if from JSON
-    deleteFromArray(id);
-	};
+    // Call a function that deletes message from private array if not JSON messages 1-5
+    if (id > 5) {
+        deleteFromArray(id);
+    }
+
+    };
 
   return Chatty;
 
