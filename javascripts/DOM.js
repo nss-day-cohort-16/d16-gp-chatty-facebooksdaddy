@@ -28,7 +28,7 @@ var Chatty = (function(Chatty) {
 
     var string = "";
     var counter = 1;
-      for (var i = 0; i < formattedArray.length; i++) {
+      for (let i = 0; i < formattedArray.length; i++) {
           string +=
           `<div class="messageContainer">
               <div class="messageText">
@@ -45,6 +45,41 @@ var Chatty = (function(Chatty) {
 
     targetElement.innerHTML += string;
   };
+
+  Chatty.addListeners = function () {
+    var clear = document.getElementById("clear-button");
+    clear.addEventListener("click", Chatty.clearMessages);
+  };
+
+//
+
+// var textInput = document.getElementById("input");
+// var messageText = document.getElementById("container");
+
+// document.getElementById("textSize").addEventListener("click", function() {
+//   messageText.classList.toggle("large");
+// });
+
+
+// document.getElementById("theme").addEventListener("click", function () {
+//   messageText.classList.toggle("change-color");
+// })
+
+
+// function resetForm() {
+//   textInput.value = " ";
+//   messageText.innerHTML = " ";
+
+// }
+
+
+
+
+// textInput.addEventListener("keypress", function(event) {
+//  messageText.innerHTML =  event.target.value + ' <div class="deleteButton deleteButton-${counter}"><button>Delete</button></div>'
+// })
+
+
 
   return Chatty;
 
