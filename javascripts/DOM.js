@@ -44,9 +44,10 @@ var Chatty = (function(Chatty) {
       }
 
     targetElement.innerHTML += string;
+    Chatty.addListeners(arrayObject.length);
   };
 
-  Chatty.addListeners = function () {
+  Chatty.addListeners = function (jsonLength) {
     var textInput = document.getElementById("input");
     var clear = document.getElementById("clear-button");
 
@@ -54,18 +55,31 @@ var Chatty = (function(Chatty) {
     clear.addEventListener("click", Chatty.clearMessages);
     // Font size Toggle
     document.getElementById("textSize").addEventListener("click", function() {
-      targetElement.classList.toggle("large");
-    });
+      targetElement.classList.toggle("large");});
     // Dark theme Toggle
     document.getElementById("theme").addEventListener("click", function () {
-      targetElement.classList.toggle("change-color");
-    });
+      targetElement.classList.toggle("change-color");});
     // Save new message
     textInput.addEventListener("keypress", function(event) {
       if (event.keyCode === 13) {
         Chatty.addNewMessage(textInput.value);
       }
     });
+    // First 6 original message delete buttons
+
+
+    for (let i = 1; i <= jsonLength; i++) {
+      var string = "deleteButton-" + i;
+      document.getElementsByClassName(string)[0].addEventListener("click", function () {
+        Chatty.deleteMessage(i);
+      });
+      // document.getElementById(string).addEventListener("click", function () {
+      //   //
+      //   alert("delete");
+      // });
+    }
+
+
 
   };
 

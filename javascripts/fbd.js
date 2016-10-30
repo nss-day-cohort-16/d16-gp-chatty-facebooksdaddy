@@ -2,39 +2,38 @@
 
 var Chatty = ( function(Chatty) {
 	var inputMessages = [];
-	var counter = 7;
+	var counter = 6;
+
+	var clearButton = document.getElementById("clear-button");
 
 		Chatty.addNewMessage = function(input) {
+			counter++;
+			clearButton.disabled = false;
 			var Messages = {
 				message: input,
 				id: counter
 				};
 			inputMessages.push(Messages);
+			console.log("inputMessages:", inputMessages);
 			Chatty.loadNewMessage(input, counter);
 			Chatty.listenSingleMessage(counter);
-			counter++;
-			document.getElementById("clear-button").disabled = false;
+		};
+		Chatty.deleteMessage = function(id) {
+			alert(`deleted ${id}`);
 		};
 		Chatty.listenSingleMessage = function (id) {
-			var string = "deleteButton-" + id;
-			var targetElement = document.getElementById(string);
-			targetElement.addEventListener("click", function(){
-			Chatty.deleteMessage(id);
+			let string = "deleteButton-" + id;
+			document.getElementsByClassName(string)[0].addEventListener("click", function() {
+				Chatty.deleteMessage(id);
 			});
 		};
 		Chatty.clearMessages = function () {
-			document.getElementById("clear-button").disabled = true;
 			inputMessages = [];
 			document.getElementById("container").innerHTML = "";
+			clearButton.disabled = true;
 		};
-		console.log(inputMessages);
 		return Chatty;
 
 })(Chatty || {});
 
 console.log("fbd js", Chatty);
-// Chatty.addNewMessage( "apfijghaijfgaeirhg");
-// Chatty.addNewMessage( "apfijghaijfgaeirhg");
-// Chatty.addNewMessage( "apfijghaijfgaeirhg");
-// Chatty.listenSingleMessage(7);
-
