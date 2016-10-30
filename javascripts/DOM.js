@@ -40,34 +40,35 @@ var Chatty = (function(Chatty) {
 
 console.log("DOM js", Chatty);
 
- document.getElementById("input").addEventListener("keypess", function(event) {
- // console.log("event",event );
-var textInput = document.getElementById("input").value;
-var outputEl = document.getElementById("container");
-    var string = "";
-    var counter = 1;
-  if (event.keyCode === 13) {
-    outputEl.innerHTML = event.target.value;
-      for (var i = 0; i < 100; i++) {
-          string +=
+//  document.getElementById("input").addEventListener("keypess", function(event) {
+//  // console.log("event",event );
+// var textInput = document.getElementById("input").value;
+// var outputEl = document.getElementById("container");
+//     var string = "";
+//     var counter = 1;
+//   if (event.keyCode === 13) {
+//     outputEl.innerHTML = event.target.value;
+//       for (var i = 0; i < 100; i++) {
+//           string +=
 
-             `<div class="messageContainer">
-              <div class="messageText">
-                <p>${textInput}</p>
-              </div>
-              <div class="deleteButton deleteButton-${counter}">
-                <button>Delete</button>
-              </div>
-            </div>
-          </div>`
+//              `<div class="messageContainer">
+//               <div class="messageText">
+//                 <p>${textInput}</p>
+//               </div>
+// //               <div class="deleteButton deleteButton-${counter}">
+// //                 <button>Delete</button>
+// //               </div>
+// //             </div>
+// //           </div>`
 
-      counter++;
+//       counter++;
 
-};
+// };
 
-}
-});
+// }
+// });
  
+
 
 
 var clear = document.getElementById("clear-button");
@@ -93,7 +94,9 @@ function resetForm() {
 clear.addEventListener("click", resetForm);
 
 
-
+textInput.addEventListener("keypress", function(event) {
+ messageText.innerHTML =  event.target.value + ' <div class="deleteButton deleteButton-${counter}"><button>Delete</button></div>'
+})
 
 
 
