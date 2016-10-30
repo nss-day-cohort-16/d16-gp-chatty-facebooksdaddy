@@ -19,6 +19,7 @@ var Chatty = ( function(Chatty) {
 			Chatty.listenSingleMessage(counter);
 		};
 		Chatty.deleteMessage = function(id) {
+			document.getElementsByClassName("messageContainer")[id-1].innerHTML = ""; //delete from DOM
 			alert(`deleted ${id}`);
 		};
 		Chatty.listenSingleMessage = function (id) {
