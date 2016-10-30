@@ -2,7 +2,7 @@
 
 var Chatty = ( function(Chatty) {
 	var inputMessages = [];
-	var counter = 6;
+	var counter = 7;
 
 		Chatty.addNewMessage = function( input) {
 			var Messages = {

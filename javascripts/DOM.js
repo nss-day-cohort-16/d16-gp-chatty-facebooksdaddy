@@ -2,7 +2,20 @@
 
 var Chatty = (function(Chatty) {
 
-  // var testArray = ["I'm the first message.", "I'm the second message.", "I'm the third message.", "I'm the fourth message.", "I'm the fifth message."];
+  var targetElement = document.getElementById("container");
+
+  Chatty.loadNewMessage = function (message, id) {
+    var newMessage =
+     `<div class="messageContainer">
+        <div class="messageText">
+          <p>${message}</p>
+        </div>
+        <div class="deleteButton deleteButton-${id}">
+          <button>Delete</button>
+        </div>
+      </div>`;
+    targetElement.innerHTML = targetElement.innerHTML + newMessage;
+  };
 
   // - push html out. add ids message-1 through message-5 and delete-1 etc
   Chatty.loadOriginalMessages = function (object) {
@@ -13,7 +26,6 @@ var Chatty = (function(Chatty) {
       formattedArray.push(arrayObject[i].message);
     }
 
-    var targetElement = document.getElementById("container");
     var string = "";
     var counter = 1;
       for (var i = 0; i < formattedArray.length; i++) {
@@ -31,7 +43,7 @@ var Chatty = (function(Chatty) {
         counter++;
       }
 
-    targetElement.innerHTML = string;
+    targetElement.innerHTML += string;
   };
 
   return Chatty;
