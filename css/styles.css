@@ -17,3 +17,18 @@
   width: 19%; }
 
 /*# sourceMappingURL=styles.css.map */
+
+/*************TOGGLE CLASSES*************/
+
+.large {
+
+	font-size: 3em;
+	text-anchor: center;
+	font-style: bold;
+
+}
+
+.change-color {
+	background-color: #000000;
+	color: #ffffff;
+}
