@@ -47,39 +47,27 @@ var Chatty = (function(Chatty) {
   };
 
   Chatty.addListeners = function () {
+    var textInput = document.getElementById("input");
     var clear = document.getElementById("clear-button");
+
+    // Clear button
     clear.addEventListener("click", Chatty.clearMessages);
+    // Font size Toggle
+    document.getElementById("textSize").addEventListener("click", function() {
+      targetElement.classList.toggle("large");
+    });
+    // Dark theme Toggle
+    document.getElementById("theme").addEventListener("click", function () {
+      targetElement.classList.toggle("change-color");
+    });
+    // Save new message
+    textInput.addEventListener("keypress", function(event) {
+      if (event.keyCode === 13) {
+        Chatty.addNewMessage(textInput.value);
+      }
+    });
+
   };
-
-//
-
-// var textInput = document.getElementById("input");
-// var messageText = document.getElementById("container");
-
-// document.getElementById("textSize").addEventListener("click", function() {
-//   messageText.classList.toggle("large");
-// });
-
-
-// document.getElementById("theme").addEventListener("click", function () {
-//   messageText.classList.toggle("change-color");
-// })
-
-
-// function resetForm() {
-//   textInput.value = " ";
-//   messageText.innerHTML = " ";
-
-// }
-
-
-
-
-// textInput.addEventListener("keypress", function(event) {
-//  messageText.innerHTML =  event.target.value + ' <div class="deleteButton deleteButton-${counter}"><button>Delete</button></div>'
-// })
-
-
 
   return Chatty;
 

@@ -4,7 +4,7 @@ var Chatty = ( function(Chatty) {
 	var inputMessages = [];
 	var counter = 7;
 
-		Chatty.addNewMessage = function( input) {
+		Chatty.addNewMessage = function(input) {
 			var Messages = {
 				message: input,
 				id: counter
