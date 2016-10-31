@@ -73,13 +73,24 @@ var Chatty = (function(Chatty) {
       }
     });
     // First 6 original message delete buttons
-    for (let i = 0; i <= dataLength.number; i++) {
-      var deleteString = "deleteButton-" + (i + 1);
-      document.getElementsByClassName(deleteString)[0].addEventListener("click", function () {
-        document.getElementsByClassName("messageContainer")[i].innerHTML = ""; //delete from DOM
-      });
-
-    }
+    document.getElementsByClassName("deleteButton-1")[0].addEventListener("click", function () {
+      document.getElementsByClassName("messageContainer")[0].innerHTML = "";
+    });
+    document.getElementsByClassName("deleteButton-2")[0].addEventListener("click", function () {
+      document.getElementsByClassName("messageContainer")[1].innerHTML = "";
+    });
+    document.getElementsByClassName("deleteButton-3")[0].addEventListener("click", function () {
+      document.getElementsByClassName("messageContainer")[2].innerHTML = "";
+    });
+    document.getElementsByClassName("deleteButton-4")[0].addEventListener("click", function () {
+      document.getElementsByClassName("messageContainer")[3].innerHTML = "";
+    });
+    document.getElementsByClassName("deleteButton-5")[0].addEventListener("click", function () {
+      document.getElementsByClassName("messageContainer")[4].innerHTML = "";
+    });
+    document.getElementsByClassName("deleteButton-6")[0].addEventListener("click", function () {
+      document.getElementsByClassName("messageContainer")[5].innerHTML = "";
+    });
 
   };
 
