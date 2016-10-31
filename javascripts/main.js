@@ -2,7 +2,4 @@
 
 Chatty.getData();
 
-
-
-
 console.log("main js", Chatty);

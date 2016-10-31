@@ -4,37 +4,50 @@ var Chatty = ( function(Chatty) {
 	var inputMessages = [];
 	var counter = 6;
 
-		Chatty.addNewMessage = function( input) {
+	var clearButton = document.getElementById("clear-button");
+
+		Chatty.addNewMessage = function(input) {
+			counter++;
+			clearButton.disabled = false;
 			var Messages = {
 				message: input,
 				id: counter
 				};
 			inputMessages.push(Messages);
+			console.log("inputMessages:", inputMessages);
 			Chatty.loadNewMessage(input, counter);
 			Chatty.listenSingleMessage(counter);
-			counter++;
-			document.getElementById("clear-button").disabled = false;
+			console.log("counter:", counter);
 		};
+		Chatty.deleteMessage = function(num) {
+			console.log("inputMessages.length:", inputMessages.length);
+			console.log("num:", num);
+			console.log("inputMessages[0].id:", inputMessages[0].id);
+			console.log("inputMessages before splice", inputMessages);
+			document.getElementsByClassName("messageContainer")[num-1].innerHTML = ""; //delete from DOM
+			for (var i = 0; i <= counter; i++) {
+				if (inputMessages[i].id === num) {
+					inputMessages.splice(i, 1);
+					break;
+				}
+			}
+			console.log("inputMessages after splice", inputMessages);
+		};
+
 		Chatty.listenSingleMessage = function (id) {
-			var string = "deleteButton-" + id;
-			var targetElement = document.getElementById(string);
-			targetElement.addEventListener("click", function(){
-			Chatty.deleteMessage(id);
+			let string = "deleteButton-" + id;
+			document.getElementsByClassName(string)[0].addEventListener("click", function() {
+				Chatty.deleteMessage(id);
+
 			});
 		};
 		Chatty.clearMessages = function () {
-			document.getElementById("clear-button").disabled = true;
 			inputMessages = [];
 			document.getElementById("container").innerHTML = "";
+			clearButton.disabled = true;
 		};
-		console.log(inputMessages);
 		return Chatty;
 
 })(Chatty || {});
 
 console.log("fbd js", Chatty);
-// Chatty.addNewMessage( "apfijghaijfgaeirhg");
-// Chatty.addNewMessage( "apfijghaijfgaeirhg");
-// Chatty.addNewMessage( "apfijghaijfgaeirhg");
-// Chatty.listenSingleMessage(7);
-

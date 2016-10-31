@@ -16,7 +16,7 @@ var Chatty = (function(oldChatty) {
 		  //pass data to DOM
       Chatty.loadOriginalMessages(originalMessages);
 			});
-		}
+		};
 
 		return oldChatty;
 

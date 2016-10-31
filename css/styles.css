@@ -16,4 +16,13 @@
   display: inline-block;
   width: 19%; }
 
+/*<--------------- TOGGLE CLASSES ---------------->*/
+.large {
+  font-size: 1.8em;
+  font-style: bold; }
+
+.change-color {
+  background-color: #000000;
+  color: #ffffff; }
+
 /*# sourceMappingURL=styles.css.map */
