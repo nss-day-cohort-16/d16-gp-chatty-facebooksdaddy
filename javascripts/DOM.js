@@ -5,7 +5,7 @@ var Chatty = (function(Chatty) {
   var targetElement = document.getElementById("container");
   var dataLength = {
     number: 0
-  }
+  };
 
   Chatty.loadNewMessage = function (message, id) {
     var newMessage =

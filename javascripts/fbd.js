@@ -19,10 +19,21 @@ var Chatty = ( function(Chatty) {
 			Chatty.listenSingleMessage(counter);
 			console.log("counter:", counter);
 		};
-		Chatty.deleteMessage = function(id) {
-			document.getElementsByClassName("messageContainer")[id-1].innerHTML = ""; //delete from DOM
-			// alert(`deleted ${id}`);
+		Chatty.deleteMessage = function(num) {
+			console.log("inputMessages.length:", inputMessages.length);
+			console.log("num:", num);
+			console.log("inputMessages[0].id:", inputMessages[0].id);
+			console.log("inputMessages before splice", inputMessages);
+			document.getElementsByClassName("messageContainer")[num-1].innerHTML = ""; //delete from DOM
+			for (var i = 0; i <= counter; i++) {
+				if (inputMessages[i].id === num) {
+					inputMessages.splice(i, 1);
+					break;
+				}
+			}
+			console.log("inputMessages after splice", inputMessages);
 		};
+
 		Chatty.listenSingleMessage = function (id) {
 			let string = "deleteButton-" + id;
 			document.getElementsByClassName(string)[0].addEventListener("click", function() {
