@@ -1,9 +1,8 @@
 /*<--------------- IDs ---------------->*/
 #container {
-  border: 1px solid black; 
+  border: 1px solid black;
   padding: 160px 30px 30px 30px;
-  background-color: white;
-}
+  background-color: white; }
 
 /*----------sticky nav------------*/
 header, body {
