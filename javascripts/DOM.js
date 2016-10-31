@@ -50,6 +50,7 @@ var Chatty = (function(Chatty) {
 
     targetElement.innerHTML += string;
     Chatty.addListeners();
+
   };
 
   Chatty.addListeners = function () {
@@ -77,6 +78,7 @@ var Chatty = (function(Chatty) {
       document.getElementsByClassName(deleteString)[0].addEventListener("click", function () {
         document.getElementsByClassName("messageContainer")[i].innerHTML = ""; //delete from DOM
       });
+
     }
 
   };

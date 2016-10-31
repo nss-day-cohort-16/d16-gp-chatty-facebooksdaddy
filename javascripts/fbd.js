@@ -17,15 +17,17 @@ var Chatty = ( function(Chatty) {
 			console.log("inputMessages:", inputMessages);
 			Chatty.loadNewMessage(input, counter);
 			Chatty.listenSingleMessage(counter);
+			console.log("counter:", counter);
 		};
 		Chatty.deleteMessage = function(id) {
 			document.getElementsByClassName("messageContainer")[id-1].innerHTML = ""; //delete from DOM
-			alert(`deleted ${id}`);
+			// alert(`deleted ${id}`);
 		};
 		Chatty.listenSingleMessage = function (id) {
 			let string = "deleteButton-" + id;
 			document.getElementsByClassName(string)[0].addEventListener("click", function() {
 				Chatty.deleteMessage(id);
+
 			});
 		};
 		Chatty.clearMessages = function () {
