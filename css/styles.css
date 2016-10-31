@@ -1,6 +1,28 @@
 /*<--------------- IDs ---------------->*/
 #container {
-  border: 1px solid black; }
+  border: 1px solid black;
+  padding: 160px 30px 30px 30px;
+  background-color: white; }
+
+/*----------sticky nav------------*/
+header, body {
+  margin: 0;
+  padding: 0; }
+
+header {
+  color: white; }
+
+body {
+  background-color: grey; }
+
+nav {
+  border: 1px solid black;
+  position: fixed;
+  width: 100%;
+  margin: 0;
+  height: 120px;
+  padding: 20px;
+  background-color: darkblue; }
 
 /*<--------------- Classes ---------------->*/
 .messageContainer {
@@ -22,7 +44,7 @@
   font-style: bold; }
 
 .change-color {
-  background-color: #000000;
+  background-color: #000000 !important;
   color: #ffffff; }
 
 /*# sourceMappingURL=styles.css.map */
